@@ -1,0 +1,16 @@
+consent_confirmed: true
+
+subject_name: "Synthetic test face (StyleGAN2, no real person)"
+
+date: "2026-07-03"
+
+statement: >
+  This identity folder contains a single AI-generated (StyleGAN2) synthetic
+  face image, sourced from Wikimedia Commons
+  (File:StyleGAN2_Example_3.jpg), where it is explicitly documented as an
+  AI-generated face ("This face was constructed by a GAN program",
+  generated via thispersondoesnotexist.com on 2020-01-20) and released into
+  the public domain. It does not depict any real, identifiable individual,
+  so there is no third-party consent to obtain. Used solely to smoke-test
+  the face-swap pipeline end-to-end (alignment -> training -> inference) as
+  requested by the tool's operator.
