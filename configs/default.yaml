@@ -1,0 +1,34 @@
+# Default configuration for the face-swap pipeline.
+# Copy/override values via --config or CLI flags as needed.
+
+project:
+  data_root: "data"
+  checkpoint_dir: "data/checkpoints"
+  output_dir: "data/outputs"
+
+align:
+  backend: "insightface"      # "insightface" (default) or "mediapipe" (fallback)
+  det_size: [640, 640]
+  output_resolution: 128       # 128 default (CPU-friendly); use 256 if you have a CUDA GPU
+
+device:
+  prefer_cuda: true            # auto-detect; falls back to CPU if unavailable
+
+model:
+  identity_name: null          # set to the folder name under data/identities/<name>
+  latent_dim: 512
+
+train:
+  batch_size: 16
+  epochs: 200
+  lr: 0.0002
+  warp_augment: true
+  log_every: 50
+  checkpoint_every: 1000
+  preview_every: 200
+
+inference:
+  scene_video: null             # path to a scene video, OR use --dataset/--dataset-root/--video-id
+  identity_name: null
+  blend: "feather"              # "feather" (default, LAB color transfer + feathered alpha) or "poisson"
+  keep_audio: true
